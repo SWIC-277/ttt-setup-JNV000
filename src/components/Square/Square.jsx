@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-export default function Square({ marker }) {
+export default function Square({ marker, index }) {
   return (
-    <button type="button" className="square">
+    <button type="button" id={index} className="square">
       {marker}
     </button>
   );
@@ -10,6 +10,7 @@ export default function Square({ marker }) {
 
 Square.propTypes = {
   marker: PropTypes.oneOf(["X", "O", ""]),
+  index: PropTypes.number.isRequired,
 };
 
 Square.defaultProps = {
