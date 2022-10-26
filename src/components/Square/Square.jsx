@@ -1,17 +1,32 @@
 import PropTypes from "prop-types";
 
-export default function Square({ marker, index }) {
+export default function Square({ marker, id }) {
   return (
-    <button type="button" id={index} className="square">
-      {marker}
-    </button>
+    <div>
+      <button id={id} type="button">
+        {marker}
+      </button>
+    </div>
   );
 }
 
+/* video component
+    <button type="button" id={index} className="square">
+      {marker}
+    </button>
+*/
+
 Square.propTypes = {
   marker: PropTypes.oneOf(["X", "O", ""]),
-  index: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 };
+
+/* in class
+Square.propTypes = {
+  marker: PropTypes.string,
+  id: PropTypes.number.isRequired,
+};
+*/
 
 Square.defaultProps = {
   marker: "",
