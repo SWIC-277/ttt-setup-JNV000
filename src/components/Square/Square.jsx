@@ -16,17 +16,17 @@ export default function Square({ marker, id }) {
     </button>
 */
 
+/* video
 Square.propTypes = {
   marker: PropTypes.oneOf(["X", "O", ""]),
   id: PropTypes.number.isRequired,
 };
+*/
 
-/* in class
 Square.propTypes = {
   marker: PropTypes.string,
   id: PropTypes.number.isRequired,
 };
-*/
 
 Square.defaultProps = {
   marker: "",
