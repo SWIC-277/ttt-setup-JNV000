@@ -21,16 +21,20 @@ describe("Suare", () => {
     expect(square).toHaveAttribute("id", "0");
   });
 
-  // this is asyncrounous
+  // this is asynchrounous
   it("calls the click handler function whenever clicked", async () => {
-    const handleClick = jest.fn(); // mock function
+    const handleClick = jest.fn((event) => event.target.id); // mock function
     const user = userEvent.setup();
 
     render(<Square id={0} handleClick={handleClick} />);
 
     const square = screen.getByRole("button");
-    await user.click(square); // await requires function to be asyncronous
+    // simulating a click even happens asynchronously
+    await user.click(square); // await requires function to be asynchronous
 
     expect(handleClick).toHaveBeenCalled();
+
+    // TODO: Expect the handleClick function to be called with the correcti id
+    expect(handleClick.mock.results[0].value).toBe("0");
   });
 });
