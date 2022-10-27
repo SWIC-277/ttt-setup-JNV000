@@ -4,7 +4,7 @@ import Square from "./Square";
 
 describe("Suare", () => {
   it("renders a square with the correct marker ('X' or 'O')", () => {
-    render(<Square marker="X" id={0} />);
+    render(<Square marker="X" id={0} handleClick={() => {}} />);
 
     const square = screen.getByRole("button", { name: "X" });
 
@@ -13,7 +13,7 @@ describe("Suare", () => {
   });
 
   it("renders a square without a marker", () => {
-    render(<Square id={0} />);
+    render(<Square id={0} handleClick={() => {}} />);
 
     const square = screen.getByRole("button");
 
@@ -23,11 +23,11 @@ describe("Suare", () => {
 
   // this is asynchrounous
   it("calls the click handler function whenever clicked", async () => {
-    const id = 0;
+    const ID = 0;
     const handleClick = jest.fn((event) => event.target.id); // mock function
     const user = userEvent.setup();
 
-    render(<Square id={id} handleClick={handleClick} />);
+    render(<Square id={ID} handleClick={handleClick} />);
 
     const square = screen.getByRole("button");
     // simulating a click even happens asynchronously
@@ -36,6 +36,6 @@ describe("Suare", () => {
     expect(handleClick).toHaveBeenCalled();
 
     // TODO: Expect the handleClick function to be called with the correcti id
-    expect(handleClick.mock.results[0].value).toBe(id.toString());
+    expect(handleClick.mock.results[0].value).toBe(ID.toString());
   });
 });
