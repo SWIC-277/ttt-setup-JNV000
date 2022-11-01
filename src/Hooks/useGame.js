@@ -32,9 +32,11 @@ export default function useGame() {
     turn: "X",
   });
 
+  /*
   const makeMove = (index) => {
     dispatch({ type: "made_move", index });
   };
+*/
 }
 
 /* video code
