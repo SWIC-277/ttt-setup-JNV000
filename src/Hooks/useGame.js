@@ -26,20 +26,19 @@ export default function useGame() {
   const [state, dispatch] = useReducer(reducer, {
     board: Array(9).fill(null),
     turn: "X",
+    winner: null,
   });
 
-  const makeMove = (index) => {
-    dispatch({ type: "made_move", index });
+  const makeMove = (event) => {
+    dispatch({ type: "made_move", index: event.target.id });
   };
 
-  const declareWinner = (winner) => {
-    dispatch({ type: "declared_winner", winner });
-  };
-
+  const { board, winner } = state;
+  // removed declare winner
   return {
-    ...state,
+    board,
+    winner,
     makeMove,
-    declareWinner,
   };
 }
 
