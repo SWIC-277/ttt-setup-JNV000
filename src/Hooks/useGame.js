@@ -1,24 +1,20 @@
 import { useReducer } from "react";
+import checkWinner from "services/game.service";
 
 function reducer(state, action) {
   switch (action.type) {
     case "made_move": {
+      // only mutate a local copy of the state
       const board2Update = [...state.board];
 
-      // TODO: update the board with the current turn using the action.index
-      if (board2Update[action.index] === null) {
+      if (!board2Update[action.index]) {
+        // if there is nothing in the square
         board2Update[action.index] = state.turn;
       }
       return {
-        ...state,
         board: board2Update,
         turn: state.turn === "X" ? "O" : "X", // if turn was X make O, else X
-      };
-    }
-    case "declared_winner": {
-      return {
-        ...state,
-        winner: action.winner,
+        winner: checkWinner(board2Update, state.turn) ? state.turn : null,
       };
     }
     default:
