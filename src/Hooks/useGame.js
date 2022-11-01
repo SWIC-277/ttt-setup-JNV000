@@ -4,8 +4,9 @@ function reducer(state, action) {
   switch (action.type) {
     case "made_move": {
       const board2Update = [...state.board];
-      // TODO: update the board with the curren tturn using the action.index
-      if (board2Update[action.index] == null) {
+
+      // TODO: update the board with the current turn using the action.index
+      if (board2Update[action.index] === null) {
         board2Update[action.index] = state.turn;
       }
       return {
