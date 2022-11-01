@@ -4,21 +4,26 @@ import Square from "./Square";
 
 describe("Suare", () => {
   it("renders a square with the correct marker ('X' or 'O')", () => {
-    render(<Square marker="X" id={0} handleClick={() => {}} />);
+    const MARKER = "X";
+    const ID = 0;
 
-    const square = screen.getByRole("button", { name: "X" });
+    render(<Square marker={MARKER} id={0} handleClick={() => {}} />);
+
+    const square = screen.getByRole("button", { name: MARKER });
 
     expect(square).toBeInTheDocument();
-    expect(square).toHaveAttribute("id", "0");
+    expect(square).toHaveAttribute("id", ID.toString());
   });
 
   it("renders a square without a marker", () => {
-    render(<Square id={0} handleClick={() => {}} />);
+    const ID = 0;
+
+    render(<Square id={ID} handleClick={() => {}} />);
 
     const square = screen.getByRole("button");
 
     expect(square).toBeInTheDocument();
-    expect(square).toHaveAttribute("id", "0");
+    expect(square).toHaveAttribute("id", ID.toString());
   });
 
   // this is asynchrounous
@@ -37,5 +42,6 @@ describe("Suare", () => {
 
     // TODO: Expect the handleClick function to be called with the correcti id
     expect(handleClick.mock.results[0].value).toBe(ID.toString());
+    // expect(handleClick).toBeCalled();
   });
 });
