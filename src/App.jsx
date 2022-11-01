@@ -10,9 +10,15 @@ function App() {
   const { board, makeMove, winner, turn } = useGame();
 
   // return <h1>Tic Tac Toe</h1>;
-  return board.map((square, index) => (
-    <Square key={index} id={index} handleClick={makeMove} />
-  ));
+  return (
+    <main>
+      <div className="board">
+        {board.map((square, index) => (
+          <Square key={index} id={index} handleClick={makeMove} />
+        ))}
+      </div>
+    </main>
+  );
 }
 
 export default App;
