@@ -5,16 +5,19 @@ import "./App.css";
 // configuration file is set up so ./ is not needed for files in src
 
 function App() {
-  // TODO: Add useReducer hook to track state of: board, turn, winner
-  // const board = new Array(9).fill("");
-  const { board, makeMove, winner, turn } = useGame();
+  const { board, winner, makeMove } = useGame();
 
   // return <h1>Tic Tac Toe</h1>;
   return (
     <main>
       <div className="board">
         {board.map((square, index) => (
-          <Square key={index} id={index} handleClick={makeMove} />
+          <Square
+            key={index}
+            id={index}
+            handleClick={makeMove}
+            marker={square}
+          />
         ))}
       </div>
     </main>
