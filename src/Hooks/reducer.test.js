@@ -46,7 +46,6 @@ it("sets all square's markers to null and sets turn to X", () => {
   };
 
   // this action should reset the game board to all null and turn should be X
-  // this action should cause X to win
   const action = {
     type: "reset_game",
   };
