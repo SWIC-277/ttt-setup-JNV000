@@ -18,6 +18,17 @@ export default function reducer(state, action) {
       // unfortunately as currently coded turn will switch if an already
       // filled square is clicked and no new marker is drawn.
     }
+    // reset action for resetting the game.
+    case "reset_game": {
+      // make all spots on board null
+      const resetBoard = [...state.board].map((square) => null);
+      // return initial game state
+      return {
+        board: resetBoard,
+        turn: "X",
+        winner: null,
+      };
+    }
     default:
       throw new Error("Invalid action");
   }
