@@ -37,3 +37,24 @@ it("updates the winner after a winning move", () => {
 
   expect(newState.winner).toBe("X");
 });
+
+it("sets all square's markers to null", () => {
+  const state = {
+    // make a state that is one move away from being won.
+    board: ["X", "X", null, "O", null, "x", null, "O", null],
+    turn: "o",
+  };
+
+  // this action should reset the game board to all null and turn should be X
+  // this action should cause X to win
+  const action = {
+    type: "reset_game",
+  };
+
+  const newState = reducer(state, action);
+
+  expect(newState.board[0]).toBe(null);
+  expect(newState.board[3]).toBe(null);
+  expect(newState.board[3]).toBe(null);
+  expect(newState.turn).toBe("X");
+});
