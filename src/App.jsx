@@ -38,7 +38,6 @@ function App() {
   );
   // short cirucuit: if there is a winner (it is not null) then we show a paragraph with winner wins!
   // If there is no winner && make move ensures moves cannot be made after there is a winner
-  // I wouldn't mind a reset button
 }
 
 export default App;
