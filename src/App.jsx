@@ -7,9 +7,7 @@ import useGame from "./Hooks/useGame";
 function App() {
   // get necessary props and data from useGame hook.
   const { board, winner, makeMove } = useGame();
-
-  // return <h1>Tic Tac Toe</h1>;
-  // we will crate a game board consisting of 9 squares.
+  // we will create a game board consisting of 9 squares.
   // formatting is handled by the CSS
   // Note: My project will require a 2d/nested arrays to track game board
   // due to its dynamic/user inputted number of rows and columns.
