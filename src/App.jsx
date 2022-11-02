@@ -16,6 +16,9 @@ function App() {
   return (
     <main>
       <h1>Tic Tac Toe</h1>
+
+      {winner && <p>{winner} wins!</p>}
+
       <div className="board">
         {board.map((square, index) => (
           <Square
@@ -28,6 +31,7 @@ function App() {
       </div>
     </main>
   );
+  // short cirucuit: if there is a winner (it is not null) then we show a paragraph with winner wins!
   // I wouldn't mind a reset button
 }
 
