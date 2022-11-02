@@ -22,7 +22,7 @@ function App() {
           <Square
             key={index}
             id={index}
-            handleClick={!winner && makeMove}
+            handleClick={winner ? undefined : makeMove}
             marker={square}
           />
         ))}
