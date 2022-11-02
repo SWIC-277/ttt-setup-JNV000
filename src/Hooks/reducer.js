@@ -22,6 +22,7 @@ export default function reducer(state, action) {
     case "reset_game": {
       // make all spots on board null
       const resetBoard = [...state.board].map((square) => null);
+      // probably didn't need to use map, but this would let it work with boards of different sizes.
       // return initial game state
       return {
         board: resetBoard,
