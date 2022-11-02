@@ -6,9 +6,10 @@ describe("App", () => {
   it("renders Tic Tac Toe", () => {
     render(<App />);
 
-    const squares = screen.getAllByRole("button");
+    const buttons = screen.getAllByRole("button");
 
-    expect(squares).toHaveLength(9); // we expect 9 squares on a board
+    // expect(squares).toHaveLength(9); // we expect 9 squares on a board
+    expect(buttons).toHaveLength(10); // since I added a reset button we have 10
   });
 
   it("alternates 'X' and 'O' whenever clicking squares", async () => {
