@@ -22,7 +22,7 @@ function App() {
           <Square
             key={index}
             id={index}
-            handleClick={makeMove}
+            handleClick={!winner && makeMove}
             marker={square}
           />
         ))}
@@ -30,6 +30,7 @@ function App() {
     </main>
   );
   // short cirucuit: if there is a winner (it is not null) then we show a paragraph with winner wins!
+  // If there is no winner && make move ensures moves cannot be made after there is a winner
   // I wouldn't mind a reset button
 }
 
