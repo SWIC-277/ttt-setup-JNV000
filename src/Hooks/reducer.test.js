@@ -42,7 +42,7 @@ it("sets all square's markers to null and sets turn to X", () => {
   const state = {
     // make a state that is one move away from being won.
     board: ["X", "X", null, "O", null, "x", null, "O", null],
-    turn: "o",
+    turn: "O",
   };
 
   // this action should reset the game board to all null and turn should be X
