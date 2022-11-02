@@ -6,7 +6,7 @@ import useGame from "./Hooks/useGame";
 
 function App() {
   // get necessary props and data from useGame hook.
-  const { board, winner, makeMove } = useGame();
+  const { board, winner, makeMove, resetGame } = useGame();
   // we will create a game board consisting of 9 squares.
   // formatting is handled by the CSS
   // Note: My project will require a 2d/nested arrays to track game board
@@ -27,6 +27,13 @@ function App() {
           />
         ))}
       </div>
+      <button
+        type="button"
+        className="rounded bg-blue-500 py-2 px-4 text-base font-bold text-white hover:bg-blue-700"
+        onClick={resetGame}
+      >
+        Reset
+      </button>
     </main>
   );
   // short cirucuit: if there is a winner (it is not null) then we show a paragraph with winner wins!
