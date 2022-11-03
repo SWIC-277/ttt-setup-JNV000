@@ -8,6 +8,7 @@ export default function useGame() {
     turn: "X",
     winner: null,
   });
+  // TODO: use math.random to make initial turn randomly 'X' or 'O' (no test needed) Add message to tell whose turn it is.
 
   const makeMove = (event) => {
     dispatch({ type: "made_move", index: event.target.id });
