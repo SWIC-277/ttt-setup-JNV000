@@ -22,7 +22,7 @@ Square.propTypes = {
 */
 
 Square.propTypes = {
-  marker: PropTypes.string,
+  marker: PropTypes.oneOf(["X", "O", ""]),
   id: PropTypes.number.isRequired,
   handleClick: PropTypes.func,
 };
