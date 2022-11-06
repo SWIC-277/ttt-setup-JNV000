@@ -59,3 +59,21 @@ it("sets all square's markers to null and sets turn to X", () => {
 });
 
 // TODO: test to make sure move does not change when marked square is clicked
+it("ensures turn does not change when marked square is clicked", () => {
+  const state = {
+    // make a state that is one move away from being won.
+    board: ["X", "X", null, "O", "O", "x", null, "O", null],
+    turn: "X",
+  };
+
+  // try to perform action on marked square
+  const action = {
+    type: "made_move",
+    index: 0,
+  };
+
+  const newState = reducer(state, action);
+
+  // turn should not have changed
+  expect(newState.turn).toBe("X");
+});
