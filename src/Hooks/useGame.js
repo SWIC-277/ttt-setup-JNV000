@@ -1,11 +1,20 @@
 import { useReducer } from "react";
 import reducer from "./reducer";
 
+const getInitialTurn = () => {
+  const turnValue = Math.floor(Math.random() * 2);
+  if (turnValue === 1) {
+    return "X";
+  }
+  // else the turn is O
+  return "O";
+};
+
 export default function useGame() {
   // start with an empty board, on turn X, and no winner
   const [state, dispatch] = useReducer(reducer, {
     board: Array(9).fill(null),
-    turn: "X",
+    turn: getInitialTurn(),
     winner: null,
   });
   // TODO: use math.random to make initial turn randomly 'X' or 'O' (no test needed) Add message to tell whose turn it is.
