@@ -55,7 +55,8 @@ it("sets all square's markers to null and sets turn to X", () => {
   expect(newState.board[0]).toBe(null);
   expect(newState.board[3]).toBe(null);
   expect(newState.board[5]).toBe(null);
-  expect(newState.turn).toBe("X");
+  // since initial turn is random we will not be making the turn X every time.
+  // expect(newState.turn).toBe("X");
 });
 
 // TODO: test to make sure move does not change when marked square is clicked

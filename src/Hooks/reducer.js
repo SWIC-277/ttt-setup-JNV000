@@ -25,9 +25,10 @@ export default function reducer(state, action) {
       const resetBoard = [...state.board].map((square) => null);
       // probably didn't need to use map, but this would let it work with boards of different sizes.
       // return initial game state
+      const updatedTurn = state.turn === "X" ? "O" : "X";
       return {
         board: resetBoard,
-        turn: "X",
+        turn: updatedTurn,
         winner: null,
       };
     }
