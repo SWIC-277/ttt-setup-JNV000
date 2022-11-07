@@ -18,10 +18,11 @@ export default function useGame() {
     dispatch({ type: "reset_game" });
   };
 
-  const { board, winner } = state;
+  const { board, turn, winner } = state;
   // removed declare winner
   return {
     board,
+    turn,
     winner,
     makeMove,
     resetGame,

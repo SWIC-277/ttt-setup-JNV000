@@ -6,7 +6,7 @@ import useGame from "./Hooks/useGame";
 
 function App() {
   // get necessary props and data from useGame hook.
-  const { board, winner, makeMove, resetGame } = useGame();
+  const { board, turn, winner, makeMove, resetGame } = useGame();
   // we will create a game board consisting of 9 squares.
   // formatting is handled by the CSS
   // Note: My project will require a 2d/nested arrays to track game board
@@ -15,7 +15,7 @@ function App() {
     <main>
       <h1>Tic Tac Toe</h1>
 
-      {winner && <p>{winner} wins!</p>}
+      {winner ? <p>{winner} wins! </p> : <p> {turn}&apos;s turn </p>}
 
       <div className="board">
         {board.map((square, index) => (
