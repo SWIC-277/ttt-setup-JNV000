@@ -59,7 +59,6 @@ it("sets all square's markers to null", () => {
   // expect(newState.turn).toBe("X");
 });
 
-// TODO: test to make sure move does not change when marked square is clicked
 it("ensures turn does not change when marked square is clicked", () => {
   const state = {
     // make a state that is one move away from being won.
